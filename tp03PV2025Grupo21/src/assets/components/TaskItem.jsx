@@ -1,7 +1,7 @@
-function TaskItem({ task, onEliminar }) {
+function TaskItem({ task, onEliminar, onRealizado }) {
   return (
-    <li id={task?.id} className="todo_item">
-      <button className="items_check">
+    <li id={task?.id} className={`todo_item ${task.completed ? "completed" : ""}`}>
+      <button className="items_check" onClick={() => onRealizado(task.id)}>
         <svg>
           <circle cx="11.998" cy="11.998" fillRule="nonzero" r="9.998" />
         </svg>
