@@ -1,17 +1,18 @@
 import { useState } from "react";
 
-function Formulario() {
-  const [tarea, setTarea] = useState(""); 
+function Formulario({ onAgregar }) {
+  const [tarea, setTarea] = useState("");
 
   const taskInput = (evento) => {
-    setTarea(evento.target.value); // actualiza el estado
+    setTarea(evento.target.value);
   };
 
   const envio = (evento) => {
     evento.preventDefault();
-    console.log("Tarea enviada:", tarea); 
-    setTarea(""); // limpia el estado después de enviar
-    evento.target.reset(); // resetea el formulario
+    if (tarea.trim() !== "") {
+      onAgregar(tarea);
+      setTarea("");
+    }
   };
 
   return (
@@ -22,11 +23,11 @@ function Formulario() {
           name="tarea"
           id="tarea"
           placeholder="Ingresar tarea"
-          value={tarea} // vincula el valor al estado
-          onChange={taskInput} // llama a la función 'taskInput' al cambiar el valor
+          value={tarea}
+          onChange={taskInput}
         />
       </label>
-      <button>
+      <button type="submit">
         <span className="TextoOculto">Enviar</span>
         <svg>
           <path d="" />
