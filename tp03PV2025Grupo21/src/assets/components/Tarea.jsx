@@ -1,5 +1,5 @@
 import React from "react";
-import Formulario from "./Formulario";
+import Formulario from "./TaskInput";
 import TaskList from "./TaskList";
 
 function Home() {
