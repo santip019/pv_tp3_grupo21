@@ -1,3 +1,4 @@
+import './Producto.css'
 import React, { useEffect } from "react";
 import Arreglo from "./Arreglo";
 
