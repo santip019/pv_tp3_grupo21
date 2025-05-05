@@ -1,5 +1,6 @@
 import React from "react";
 import TaskItem from "./TaskItem"; // Importa el componente TaskItem
+import "./Tarea.css";
 
 function TaskList({ tasks, onEliminar, onRealizado }) {
   return (
