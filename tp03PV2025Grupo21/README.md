@@ -1,12 +1,26 @@
-# React + Vite
+## Integrantes del Grupo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Padilla Santiago** – Controlador de Versionamiento, Desarrollo de Tarea (ToDoList)
+- **Efimov Valentina** – Desarrollo de Tarea (ToDoList)
+- **Cruz Antonella** – Desarrollo de Tarea (ToDoList)
+- **Calpanchay Maximiliano** – Desarrollo de Aplicación Productos
+- **Fernandez Bruno** – Desarrollo de Aplicación Productos
 
-Currently, two official plugins are available:
+## Descripción del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La aplicación es un **Gestor de Productos y Tareas** que permite:
 
-## Expanding the ESLint configuration
+- Agregar Productos, filtrarlos de distintas formas, agregar IVA, entre otras funciones que puedes explorar.
+- Visualizar todos los Productos agregadas en una lista.
+- Eliminar Productos que ya no sean necesarias.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Agregar Tareas con título, descripción y fecha límite.
+- Visualizar todas las tareas agregadas en una lista ordenada.
+- Eliminar tareas que ya no sean necesarias.
+- Marcar tareas como completadas.
+
+Esta herramienta busca fomentar la **organización personal y productividad**, siendo ideal para uso cotidiano, estudiantes o equipos pequeños.
+
+---
+
+> Proyecto realizado como parte del trabajo práctico 3 del curso de PV 2025.
