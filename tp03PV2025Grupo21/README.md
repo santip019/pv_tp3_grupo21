@@ -21,6 +21,7 @@ La aplicación es un **Gestor de Productos y Tareas** que permite:
 
 Esta herramienta busca fomentar la **organización personal y productividad**, siendo ideal para uso cotidiano, estudiantes o equipos pequeños.
 
+
 ---
 
 > Proyecto realizado como parte del trabajo práctico 3 del curso de PV 2025.
