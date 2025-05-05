@@ -1,0 +1,317 @@
+/* Estilo general */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Contenedor principal */
+  .wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ocultar cualquier contenido que se desborde */
+
+  }
+  
+  /* Encabezado */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #4caf50;
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0 0;
+  }
+  
+  /* Formulario de entrada (TaskInput.jsx) */
+  .formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .formulario input[type="text"] {
+    width: 85%;
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .formulario input[type="text"]:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .formulario button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    width: 30%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .formulario button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+  }
+  
+  /* Lista de tareas (TaskList.jsx) */
+  .todo_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Elementos de la lista de tareas (TaskItem.jsx) */
+  .todo_item {
+    display: flex;
+    flex-direction: row; /* Cambiar a diseño vertical si es necesario */
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 100%; /* Asegura que el contenedor no se desborde */
+    overflow: hidden;
+  }
+
+  .todo_item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    flex-grow: 1;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* Compatibilidad adicional */
+    white-space: normal;
+    max-width: 95%;
+  }
+  
+  .todo_item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .todo_item.completed {
+    text-decoration: line-through;
+    color: #1d1d1d;
+    background-color: #e0e0e0;
+  }
+  
+  /* Botones dentro de los elementos de la lista */
+  .todo_item button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .todo_item button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+    padding: 5px;
+  }
+  
+  /* Contenedor principal de cada tarea */
+.task-container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .task-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Botón de eliminar */
+  .delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ajustar automáticamente el ancho */
+    max-width: 100%;
+  }
+  
+  .delete-button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+  }
+  
+  /* Botón de marcar como completado */
+  .items_check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  .items_check svg {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    fill: #4caf50;
+  }
+  
+  .items_check p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+    overflow-wrap: break-word; /* Ajusta palabras largas */
+    word-wrap: break-word; /* Compatibilidad adicional */
+    white-space: normal; /* Permite que el texto se ajuste automáticamente */
+    max-width: 95%; /* Asegura que el texto no desborde el contenedor */
+  }
+  
+  /* Mensaje de no tareas */
+  .no-tasks {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #999;
+    margin-top: 20px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .wrapper {
+        padding: 0.5rem;
+      }
+      
+    .title {
+        font-size: 1.8rem;
+    }
+      
+
+    .formulario {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .formulario input[type="text"] {
+      font-size: 0.9rem;
+      margin-right: 0;
+      width: 100%;
+    }
+  
+    .formulario button {
+      width: 40%;
+      height: 40px;
+    }
+  
+    .todo_item {
+      width: 100%;
+      padding: 0.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .todo_item button {
+      width: 30%;
+      height: 40px;
+
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wrapper {
+        padding: 10px; /* Reducir el padding en pantallas pequeñas */
+      }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .subtitle {
+      font-size: 0.9rem;
+    }
+  
+    .formulario input[type="text"] {
+      font-size: 0.8rem;
+    }
+  
+    .formulario button {
+      font-size: 0.9rem;
+      padding: 8px 10px;
+    }
+  
+    .todo_item {
+        flex-direction: column; /* Cambiar a diseño vertical */
+        align-items: flex-start; /* Alinear elementos al inicio */
+        gap: 10px; /* Espaciado entre el texto y el botón */
+      }
+    
+      .todo_item p {
+        max-width: 100%; /* Permitir que el texto ocupe todo el ancho */
+        word-wrap: break-word; /* Ajustar palabras largas */
+        overflow-wrap: break-word; /* Compatibilidad adicional */
+        white-space: normal; /* Permitir que el texto se ajuste automáticamente */
+      }
+
+      .delete-button {
+        width: 100%; /* Botón ocupa todo el ancho */
+        margin-top: 10px; /* Espaciado entre el texto y el botón */
+      }
+    
+      .todo_item button {
+        width: 100%; /* Botón ocupa todo el ancho */
+        margin-top: 10px; /* Espaciado entre el texto y el botón */
+      }
+
+      
+}
+  

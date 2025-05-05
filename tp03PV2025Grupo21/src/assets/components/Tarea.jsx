@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Formulario from "./TaskInput";
 import TaskList from "./TaskList";
+import "./Tarea.css";
 
 function Home() {
   const [tasks, setTasks] = useState([]);
@@ -15,7 +16,7 @@ function Home() {
   };
 
   const eliminarTarea = (id) => {
-    setTasks(tasks.filter(task => task.id !== id));
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
   const tareaRealizada = (id) => {
@@ -28,8 +29,22 @@ function Home() {
 
   return (
     <div className="wrapper">
-      <Formulario onAgregar={agregarTarea} />
-      <TaskList tasks={tasks} onEliminar={eliminarTarea} onRealizado={tareaRealizada}/>
+      <header className="header">
+        <h1 className="title">Gestor de Tareas</h1>
+        <p className="subtitle">Organiza tus tareas de manera eficiente</p>
+      </header>
+      <main>
+        <Formulario onAgregar={agregarTarea} />
+        {tasks.length > 0 ? (
+          <TaskList
+            tasks={tasks}
+            onEliminar={eliminarTarea}
+            onRealizado={tareaRealizada}
+          />
+        ) : (
+          <p className="no-tasks">No hay tareas pendientes. ¡Agrega una nueva tarea!</p>
+        )}
+      </main>
     </div>
   );
 }
