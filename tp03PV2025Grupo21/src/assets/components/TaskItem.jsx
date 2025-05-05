@@ -10,10 +10,10 @@ function TaskItem({ task, onEliminar, onRealizado }) {
       <li id={task?.id} className={`todo_item ${task.completed ? "completed" : ""}`}>
         <button className="items_check" onClick={() => onRealizado(task.id)}>
           <svg>
-            <circle cx="11.998" cy="11.998" fillRule="nonzero" r="9.998" />
+            <circle cx="10.998" cy="10.998" r="8.998"/>
           </svg>
-          <p>{task?.title}</p>
         </button>
+        <p>{task?.title}</p>
       </li>
       <div className="info_extra">
           <p><strong>Descripción:</strong> {task.descripcion || "Sin descripción"}</p>

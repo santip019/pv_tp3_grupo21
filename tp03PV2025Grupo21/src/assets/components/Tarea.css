@@ -89,6 +89,12 @@ body {
     padding: 0;
     margin: 0;
   }
+
+  .task-container li:hover {
+    background-color: #e4ffde;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+  }
   
   /* Elementos de la lista de tareas (TaskItem.jsx) */
   .todo_item {
@@ -126,13 +132,16 @@ body {
   
   .todo_item.completed {
     text-decoration: line-through;
-    color: #1d1d1d;
+    color: #000000;
     background-color: #e0e0e0;
+  }
+  .todo_item.completed svg {
+    fill: #4caf50; /* Relleno verde cuando está completado */
+    stroke: #000000; /* Cambiar el borde a verde también */
   }
   
   /* Botones dentro de los elementos de la lista */
   .todo_item button {
-    background-color: #ff4d4d;
     color: white;
     border: none;
     border-radius: 5px;
@@ -141,14 +150,10 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
-  .todo_item button:hover {
-    background-color: #e60000;
-    transform: scale(1.05);
-    padding: 5px;
-  }
-  
   /* Contenedor principal de cada tarea */
-.task-container {
+  .task-container {
+    flex-direction: column;
+    gap: 10px;
     display: flex;
     height: 100%;
     justify-content: space-between;
@@ -198,12 +203,20 @@ body {
     height: auto;
   }
   
-  
   .items_check svg {
     width: 20px;
     height: 20px;
     padding: 2px;
-    fill: #4caf50;
+    fill: transparent; /* Círculo transparente */
+    stroke: black; /* Borde negro */
+    stroke-width: 2px; /* Grosor del borde */
+    border-radius: 50%;
+    transition: fill 0.3s ease, stroke 0.3s ease; /* Transición suave */
+  }
+
+  .items_check.completed svg {
+    fill: #4caf50; /* Relleno verde cuando está completado */
+    stroke: #4caf50; /* Cambiar el borde a verde también */
   }
   
   .items_check p {
