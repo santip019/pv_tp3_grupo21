@@ -3,6 +3,8 @@ import "./Tarea.css";
 
 function Formulario({ onAgregar }) {
   const [tarea, setTarea] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [fecha, setFecha] = useState("");
 
   const taskInput = (evento) => {
     setTarea(evento.target.value);
@@ -11,8 +13,14 @@ function Formulario({ onAgregar }) {
   const envio = (evento) => {
     evento.preventDefault();
     if (tarea.trim() !== "") {
-      onAgregar(tarea);
+      onAgregar({
+        title: tarea,
+        descripcion,
+        fecha
+      });
       setTarea("");
+      setDescripcion("");
+      setFecha("");
     }
   };
 
@@ -26,6 +34,25 @@ function Formulario({ onAgregar }) {
           placeholder="Ingresar tarea"
           value={tarea}
           onChange={taskInput}
+        />
+      </label>
+      <label htmlFor="descripcion">
+        <input
+          type="text"
+          name="descripcion"
+          id="descripcion"
+          placeholder="Descripción de la tarea"
+          value={descripcion}
+          onChange={(e) => setDescripcion(e.target.value)}
+        />
+      </label>
+      <label htmlFor="fecha">
+        <input
+          type="date"
+          name="fecha"
+          id="fecha"
+          value={fecha}
+          onChange={(e) => setFecha(e.target.value)}
         />
       </label>
       <button type="submit">

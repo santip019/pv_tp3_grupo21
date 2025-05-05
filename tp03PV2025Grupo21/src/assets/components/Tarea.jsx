@@ -5,12 +5,17 @@ import "./Tarea.css";
 
 function Home() {
   const [tasks, setTasks] = useState([]);
+  const [descripcion, setDescripcion] = useState("");
+  const [fecha, setFecha] = useState(""); 
 
-  const agregarTarea = (tarea) => {
+  const agregarTarea = ({title, descripcion, fecha}) => {
     const nuevaTarea = {
       id: Date.now(),
-      title: tarea,
+      title,
+      descripcion,
+      fecha,
       completed: false,
+      expandida: false,
     };
     setTasks([...tasks, nuevaTarea]);
   };

@@ -1,7 +1,10 @@
 import "./Tarea.css";
 import React from "react";
+import { useState } from "react";
 
 function TaskItem({ task, onEliminar, onRealizado }) {
+  const [mostrarInfo, setMostrarInfo] = useState(false);
+
   return (
     <div className="task-container">
       <li id={task?.id} className={`todo_item ${task.completed ? "completed" : ""}`}>
@@ -12,6 +15,10 @@ function TaskItem({ task, onEliminar, onRealizado }) {
           <p>{task?.title}</p>
         </button>
       </li>
+      <div className="info_extra">
+          <p><strong>Descripción:</strong> {task.descripcion || "Sin descripción"}</p>
+          <p><strong>Fecha:</strong> {task.fecha || "Sin fecha"}</p>
+        </div>
       <button className="delete-button" onClick={() => onEliminar(task.id)}>
         <span className="TextoOculto">Eliminar</span>
         <svg
