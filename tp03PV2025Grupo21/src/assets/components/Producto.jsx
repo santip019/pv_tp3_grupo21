@@ -7,8 +7,8 @@ function Producto() {
   function agregarproducto(event) {
     event.preventDefault();
 
-    const nombreInput = document.getElementById("nombre");
-    const precioInput = document.getElementById("precio");
+    const nombreInput = document.getElementById("nombre")
+    const precioInput = document.getElementById("precio")
 
     const descripcion = nombreInput.value.trim();
     const precio = Number(precioInput.value);
@@ -21,7 +21,6 @@ function Producto() {
       const elemento = document.createElement("li");
       elemento.textContent = `Producto: ${producto.descripcion} - Precio: $${producto.precio}`;
       lista.appendChild(elemento);
-
       nombreInput.value = "";
       precioInput.value = "";
 
