@@ -16,7 +16,7 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ocultar cualquier contenido que se desborde */
+    overflow: hidden; 
 
   }
   
@@ -46,7 +46,7 @@ body {
     margin-bottom: 20px;
   }
   
-  .formulario input[type="text"] {
+  .formulario input[type="text"], input[type="date" i] {
     width: 85%;
     flex: 1;
     padding: 10px;
@@ -55,9 +55,10 @@ body {
     border-radius: 5px;
     margin-right: 10px;
     transition: border-color 0.3s ease;
+    background-color: #535353;
   }
-  
-  .formulario input[type="text"]:focus {
+
+  .formulario input[type="text"]:focus, input[type="date" i]:focus {
     border-color: #4caf50;
     outline: none;
   }
@@ -65,14 +66,14 @@ body {
   .formulario button {
     background-color: #4caf50;
     color: white;
-    border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 5px 10px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: flex;
-    width: 30%;
+    width: 20%;
+    margin: 12px;
     height: auto;
     justify-content: center;
     align-items: center;
@@ -95,11 +96,37 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
   }
+
+  .task-container div {
+    max-width: 100%;
+    margin: 0px auto;
+    background-color: #e4e6e4;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e4e6e4;
+  }
+
+  .task-container p {
+    margin: 0;
+    font-size: 1rem;
+    color: #302f2f;
+    flex-grow: 1;
+    overflow-wrap: break-word;
+    word-wrap: break-word; 
+    white-space: normal;
+    max-width: 95%;
+  }
+
+  .task-container div:hover {
+    background-color: #e4ffde;
+    transform: translateY(-2px);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  }
   
   /* Elementos de la lista de tareas (TaskItem.jsx) */
   .todo_item {
     display: flex;
-    flex-direction: row; /* Cambiar a diseño vertical si es necesario */
+    flex-direction: row; 
     justify-content: space-between;
     align-items: center;
     gap: 10px;
@@ -110,7 +137,7 @@ body {
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    max-width: 100%; /* Asegura que el contenedor no se desborde */
+    max-width: 100%; 
     overflow: hidden;
   }
 
@@ -120,7 +147,7 @@ body {
     color: #333;
     flex-grow: 1;
     overflow-wrap: break-word;
-    word-wrap: break-word; /* Compatibilidad adicional */
+    word-wrap: break-word; 
     white-space: normal;
     max-width: 95%;
   }
@@ -136,8 +163,8 @@ body {
     background-color: #e0e0e0;
   }
   .todo_item.completed svg {
-    fill: #4caf50; /* Relleno verde cuando está completado */
-    stroke: #000000; /* Cambiar el borde a verde también */
+    fill: #4caf50; 
+    stroke: #000000; 
   }
   
   /* Botones dentro de los elementos de la lista */
@@ -181,7 +208,7 @@ body {
     padding: 8px 12px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: auto; /* Ajustar automáticamente el ancho */
+    width: auto; 
     max-width: 100%;
   }
   
@@ -207,27 +234,27 @@ body {
     width: 20px;
     height: 20px;
     padding: 2px;
-    fill: transparent; /* Círculo transparente */
-    stroke: black; /* Borde negro */
-    stroke-width: 2px; /* Grosor del borde */
+    fill: transparent; 
+    stroke: black; 
+    stroke-width: 2px; 
     border-radius: 50%;
-    transition: fill 0.3s ease, stroke 0.3s ease; /* Transición suave */
+    transition: fill 0.3s ease, stroke 0.3s ease; 
   }
 
   .items_check.completed svg {
-    fill: #4caf50; /* Relleno verde cuando está completado */
-    stroke: #4caf50; /* Cambiar el borde a verde también */
+    fill: #4caf50; 
+    stroke: #4caf50; 
   }
   
   .items_check p {
     margin: 0;
     font-size: 1rem;
     color: #333;
-    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
-    overflow-wrap: break-word; /* Ajusta palabras largas */
-    word-wrap: break-word; /* Compatibilidad adicional */
-    white-space: normal; /* Permite que el texto se ajuste automáticamente */
-    max-width: 95%; /* Asegura que el texto no desborde el contenedor */
+    flex-grow: 1; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    white-space: normal;
+    max-width: 95%; 
   }
   
   /* Mensaje de no tareas */
@@ -282,7 +309,7 @@ body {
   
   @media (max-width: 480px) {
     .wrapper {
-        padding: 10px; /* Reducir el padding en pantallas pequeñas */
+        padding: 10px; 
       }
     
     .title {
@@ -303,26 +330,26 @@ body {
     }
   
     .todo_item {
-        flex-direction: column; /* Cambiar a diseño vertical */
-        align-items: flex-start; /* Alinear elementos al inicio */
-        gap: 10px; /* Espaciado entre el texto y el botón */
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 10px; 
       }
     
       .todo_item p {
-        max-width: 100%; /* Permitir que el texto ocupe todo el ancho */
-        word-wrap: break-word; /* Ajustar palabras largas */
-        overflow-wrap: break-word; /* Compatibilidad adicional */
-        white-space: normal; /* Permitir que el texto se ajuste automáticamente */
+        max-width: 100%; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word; 
+        white-space: normal; 
       }
 
       .delete-button {
-        width: 100%; /* Botón ocupa todo el ancho */
-        margin-top: 10px; /* Espaciado entre el texto y el botón */
+        width: 100%; 
+        margin-top: 10px; 
       }
     
       .todo_item button {
-        width: 100%; /* Botón ocupa todo el ancho */
-        margin-top: 10px; /* Espaciado entre el texto y el botón */
+        width: 100%; 
+        margin-top: 10px; 
       }
 
       
