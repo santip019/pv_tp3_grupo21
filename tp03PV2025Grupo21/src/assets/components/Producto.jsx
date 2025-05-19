@@ -27,8 +27,9 @@ function Producto() {
     setProductos(productos.filter(p => p.precio > minimo));
   };
 
+  // ACTIVIDAD 3 - Crear array con IVA y mostrar en consola
   const agregarIVA = () => {
-    setProductos(productos.map(p => {
+    const actualizados = productos.map(p => {
       if (!p.ivaAplicado) {
         return {
           ...p,
@@ -37,7 +38,9 @@ function Producto() {
         };
       }
       return p;
-    }));
+    });
+    setProductos(actualizados);
+    console.log("Productos con IVA aplicado:", actualizados);
   };
 
   //  ACTIVIDAD 6 - Eliminar menor
@@ -69,20 +72,11 @@ function Producto() {
     console.log("Productos con precio > $20:", mayoresA20);
   };
 
-  // ACTIVIDAD 3 - Crear array con IVA y mostrar en consola
-  const productosConIVA = () => {
-    const conIVA = productos.map(p => ({
-      ...p,
-      precio: parseFloat((p.precio * 1.21).toFixed(2))
-    }));
-    console.log("Productos con IVA:", conIVA);
-  };
-
   //  ACTIVIDAD 5 - Agregar nuevo
-  const agregarParlante = () => {
+  const agregarNuevo = () => {
     const nuevo = {
-      descripcion: "Parlante Bluetooth",
-      precio: 59000.90,
+      descripcion: "Teclado Mecanico",
+      precio: 25000,
       ivaAplicado: false
     };
     setProductos([...productos, nuevo]);
@@ -105,9 +99,7 @@ function Producto() {
         onChange={e => setPrecio(e.target.value)}
       />
       <button onClick={agregarProducto}>Agregar</button>
-
-      <br /><br />
-
+      <br />
       <input
         type="number"
         placeholder="Precio mínimo para filtrar"
@@ -116,12 +108,13 @@ function Producto() {
       />
       <button onClick={filtrar}>Filtrar</button>
 
-      <div style={{ marginTop: '10px' }}>
-       
-        <button onClick={filtrarMayoresA20}> Filtrar mayor de $20</button>
-        <button onClick={productosConIVA}> Ver con IVA</button>
-        <button onClick={ordenar}> Ordenar</button>
-        <button onClick={eliminarMenor}> Eliminar Menor</button>
+      <div>
+        <button onClick={filtrarMayoresA20}>Mayor de $20</button>
+        <button onClick={agregarIVA}>Aplicar IVA</button>
+        <button onClick={ordenar}>Ordenar</button>
+        <button onClick={agregarNuevo}>Agregar nuevo</button>
+        <button onClick={eliminarMenor}>Eliminar Menor</button>
+        <button onClick={mostrarProductosEnConsola}>Mostrar array</button>
       </div>
 
       <ul>
